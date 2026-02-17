@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wasalska.demo.WeatherAppController">
+   <children>
+      <Label fx:id="titleLabel" alignment="CENTER" prefHeight="68.0" prefWidth="350.0" text="Weather APP" textFill="#eb4bdb" textOverrun="CLIP">
+         <font>
+            <Font name="Arial" size="40.0" />
+         </font>
+      </Label>
+      <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#handleRefresh" prefHeight="25.0" prefWidth="367.0" text="Pokaz aktualna temperature dla miasta">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TableView fx:id="weatherTable" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="locationColumn" prefWidth="160.99999487400055" text="Miasto" />
+          <TableColumn fx:id="temperatureColumn" minWidth="0.0" prefWidth="122.66670227050781" text="Temperatura" />
+            <TableColumn fx:id="precipitationColumn" prefWidth="74.0" text="Suma opadow" />
+            <TableColumn fx:id="windColumn" prefWidth="258.99993896484375" text="Sila wiatru" />
+            <TableColumn fx:id="pm2_5Column" maxWidth="100.0" prefWidth="773.0000610351562" text="Wskaznik PM 2,5" />
+            <TableColumn fx:id="pm10Column" maxWidth="100.0" prefWidth="773.0000610351562" text="Wskaznik PM 2,5" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>
