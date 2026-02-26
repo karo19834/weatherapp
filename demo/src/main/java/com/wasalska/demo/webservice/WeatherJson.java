@@ -3,20 +3,20 @@ package com.wasalska.demo.webservice;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class WeatherJson {
-
+    //TODO zmienic nazwy na jeden jezyk, uwaga na mapowanie JSON!!!
     private String stacja;
     private double temperatura;
     private double precipitation;
     private int wind;
 
-    public WeatherJson(String location, double temperature, double precipitation, int wind) {
+    public WeatherJson(String location, double temperatura, double precipitation, int wind) {
         this.stacja = location;
-        this.temperatura = temperature;
+        this.temperatura = temperatura;
         this.precipitation = precipitation;
         this.wind = wind;
     }
 
-    public WeatherJson(){
+    public WeatherJson() {
     }
 
     public String getStacja() {
@@ -47,6 +47,7 @@ public class WeatherJson {
     public int getWind() {
         return wind;
     }
+
     @JsonSetter("predkosc_wiatru")
     public void setWind(int wind) {
         this.wind = wind;
