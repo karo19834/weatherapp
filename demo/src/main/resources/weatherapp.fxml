@@ -22,8 +22,8 @@
           <TableColumn fx:id="temperatureColumn" minWidth="0.0" prefWidth="122.66670227050781" text="Temperatura" />
             <TableColumn fx:id="precipitationColumn" prefWidth="74.0" text="Suma opadow" />
             <TableColumn fx:id="windColumn" prefWidth="258.99993896484375" text="Sila wiatru" />
-            <TableColumn fx:id="pm2_5Column" maxWidth="100.0" prefWidth="773.0000610351562" text="Wskaznik PM 2,5" />
-            <TableColumn fx:id="pm10Column" maxWidth="100.0" prefWidth="773.0000610351562" text="Wskaznik PM 2,5" />
+            <TableColumn fx:id="pm2_5Column" maxWidth="163.0" prefWidth="163.0" text="Wskaznik PM 2,5" />
+            <TableColumn fx:id="pm10Column" maxWidth="118.333251953125" prefWidth="111.333251953125" text="Wskaznik PM 10" />
         </columns>
       </TableView>
    </children>

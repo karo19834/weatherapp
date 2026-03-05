@@ -6,10 +6,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.wasalska.demo.model.MeasurmentDto;
+import com.wasalska.demo.service.dto.PmDateData;
 
 public class JsonPmDeserializer {
 
-    public Double deserializePm(String json) {
+    public PmDateData deserializePm(String json) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -20,7 +21,10 @@ public class JsonPmDeserializer {
             MeasurmentDto[] measurmentDtos = objectMapper.readValue(jsonNodeStations.toString(), MeasurmentDto[].class);
             for (MeasurmentDto measurmentDto : measurmentDtos) {
                 if (measurmentDto.getValue() != null) {
-                    return measurmentDto.getValue();
+                    PmDateData pmDateData = new PmDateData();
+                    pmDateData.setPm(measurmentDto.getValue());
+                    pmDateData.setDate(measurmentDto.getDateTime());
+                    return  pmDateData;
                 }
             }
         } catch (JsonProcessingException e) {
