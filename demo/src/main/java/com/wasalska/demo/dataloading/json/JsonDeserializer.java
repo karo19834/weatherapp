@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wasalska.demo.dataloading.json.dto.SensorDto;
 import com.wasalska.demo.dataloading.json.dto.StationDto;
-import com.wasalska.demo.dataloading.model.Station;
+import com.wasalska.demo.model.Station;
 import com.wasalska.demo.dataloading.service.dto.StationSensors;
 
 import java.util.ArrayList;

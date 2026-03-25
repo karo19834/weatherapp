@@ -1,8 +1,8 @@
 package com.wasalska.demo.dataloading;
 
-import com.wasalska.demo.dataloading.file.JsonFileReader;
+import com.wasalska.demo.filereader.JsonFileReader;
 import com.wasalska.demo.dataloading.file.StationsCsvWriter;
-import com.wasalska.demo.dataloading.model.Station;
+import com.wasalska.demo.model.Station;
 import com.wasalska.demo.dataloading.service.SensorService;
 import com.wasalska.demo.dataloading.service.StationService;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class DemoPreprocessingApplication {
+public class StationCsvCreator {
 
     private JsonFileReader jsonFileReader;
     private SensorService sensorService;
@@ -19,7 +19,7 @@ public class DemoPreprocessingApplication {
     private StationsCsvWriter stationsCsvWriter = new StationsCsvWriter();
     private String pathStation = "C:\\JavaProjects\\weatherapp\\demo\\src\\main\\resources\\Stacje.json";
 
-    public DemoPreprocessingApplication(JsonFileReader jsonFileReader, @Qualifier("sensorHttpService") SensorService sensorService, StationService stationService) {
+    public StationCsvCreator(JsonFileReader jsonFileReader, @Qualifier("sensorHttpService") SensorService sensorService, StationService stationService) {
         this.jsonFileReader = jsonFileReader;
         this.sensorService = sensorService;
         this.stationService = stationService;

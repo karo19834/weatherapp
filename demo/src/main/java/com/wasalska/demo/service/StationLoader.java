@@ -1,6 +1,6 @@
 package com.wasalska.demo.service;
 
-import com.wasalska.demo.dataloading.DemoPreprocessingApplication;
+import com.wasalska.demo.dataloading.StationCsvCreator;
 import com.wasalska.demo.filereader.StationsCsvReader;
 import com.wasalska.demo.model.Station;
 import org.springframework.stereotype.Component;
@@ -12,11 +12,11 @@ import java.util.List;
 @Component
 public class StationLoader {
     StationsCsvReader stationsCsvReader = new StationsCsvReader();
-    private DemoPreprocessingApplication demoPreprocessingApplication;
+    private StationCsvCreator stationCsvCreator;
     private String filePath = "C:\\JavaProjects\\weatherapp\\demo\\src\\main\\resources\\stations.csv";
 
-    public StationLoader(DemoPreprocessingApplication demoPreprocessingApplication) {
-        this.demoPreprocessingApplication = demoPreprocessingApplication;
+    public StationLoader(StationCsvCreator stationCsvCreator) {
+        this.stationCsvCreator = stationCsvCreator;
     }
 
     public List<Station> loadStations (){
@@ -24,7 +24,7 @@ public class StationLoader {
         List<Station> stations = Collections.emptyList();
 
         if (!file.exists() || (( System.currentTimeMillis() - file.lastModified()) > 86400000)) {
-            demoPreprocessingApplication.createStationsCsv();
+            stationCsvCreator.createStationsCsv();
         }
         stations = stationsCsvReader.readStations(filePath);
 

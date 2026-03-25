@@ -1,6 +1,6 @@
 package com.wasalska.demo.dataloading.file;
 
-import com.wasalska.demo.dataloading.model.Station;
+import com.wasalska.demo.model.Station;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -2,7 +2,7 @@ package com.wasalska.demo.dataloading.service;
 
 import com.wasalska.demo.dataloading.json.JsonDeserializer;
 import com.wasalska.demo.dataloading.service.dto.StationSensors;
-import com.wasalska.demo.dataloading.model.Station;
+import com.wasalska.demo.model.Station;
 import org.springframework.stereotype.Component;
 
 @Component
