@@ -18,7 +18,6 @@ public class StationService {
     public List<Station> getStations() {
         String result = restClient.get()
                 .uri("https://api.gios.gov.pl/pjp-api/v1/rest/station/findAll?size=500")
-                //.accept(MediaType.APPLICATION_)
                 .retrieve()
                 .body(String.class);
         return jsonDeserializer.deserializeStations(result);

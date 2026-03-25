@@ -23,14 +23,11 @@ public class StationLoader {
         File file = new File(filePath);
         List<Station> stations = Collections.emptyList();
 
-        if (!file.exists()) {
+        if (!file.exists() || (( System.currentTimeMillis() - file.lastModified()) > 86400000)) {
             demoPreprocessingApplication.createStationsCsv();
-        } else if (( System.currentTimeMillis() - file.lastModified()) > 86400000) {
-            System.out.println("Czas jest niepoprawny!");
-        }else
-        {
-            stations = stationsCsvReader.readStations(filePath);
         }
+        stations = stationsCsvReader.readStations(filePath);
+
         return stations;
     }
 }

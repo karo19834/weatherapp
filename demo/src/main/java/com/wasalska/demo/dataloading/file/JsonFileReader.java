@@ -22,13 +22,6 @@ public class JsonFileReader {
         return stations;
     }
 
-    public StationSensors readSensors(String filePath) {
-            JsonDeserializer deserializer = new JsonDeserializer();
-            StationSensors sensors = deserializer.deserializeSensors(readFile(filePath));
-            //System.out.println("Sensor: " + sensors);
-            return sensors;
-    }
-
     private String readFile(String path) {
         File file = new File(path);
         String json = "";
