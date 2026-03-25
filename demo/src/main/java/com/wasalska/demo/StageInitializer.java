@@ -25,7 +25,7 @@ public class StageInitializer implements ApplicationListener<StageReadyEvent> {
             Parent root = FXMLLoader.load(url);
             Scene scene = new Scene(root, 1000, 500);
             Stage stage = event.getStage();
-            stage.setTitle("Hello world!");
+            stage.setTitle("Weather and Air Condition");
             stage.setScene(scene);
 
 

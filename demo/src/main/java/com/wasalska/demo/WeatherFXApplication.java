@@ -8,7 +8,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 public class WeatherFXApplication extends Application {
 
-    private ConfigurableApplicationContext applicationContext;
+    private static ConfigurableApplicationContext applicationContext;
 
     @Override
     public void init()  {
@@ -24,6 +24,10 @@ public class WeatherFXApplication extends Application {
     public void stop()  {
         applicationContext.close();
         Platform.exit();
+    }
+
+    public static ConfigurableApplicationContext getApplicationContext(){
+        return applicationContext;
     }
 }
 

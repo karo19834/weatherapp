@@ -18,12 +18,12 @@
       </Button>
       <TableView fx:id="weatherTable" prefHeight="200.0" prefWidth="200.0">
         <columns>
-          <TableColumn fx:id="locationColumn" prefWidth="160.99999487400055" text="Miasto" />
-          <TableColumn fx:id="temperatureColumn" minWidth="0.0" prefWidth="122.66670227050781" text="Temperatura" />
-            <TableColumn fx:id="precipitationColumn" prefWidth="74.0" text="Suma opadow" />
-            <TableColumn fx:id="windColumn" prefWidth="258.99993896484375" text="Sila wiatru" />
-            <TableColumn fx:id="pm2_5Column" maxWidth="163.0" prefWidth="163.0" text="Wskaznik PM 2,5" />
-            <TableColumn fx:id="pm10Column" maxWidth="118.333251953125" prefWidth="111.333251953125" text="Wskaznik PM 10" />
+          <TableColumn fx:id="locationColumn" prefWidth="160.0" style="text-align: right;" text="Miasto" />
+          <TableColumn fx:id="temperatureColumn" minWidth="0.0" prefWidth="100.0" text="Temperatura" />
+            <TableColumn fx:id="precipitationColumn" prefWidth="100.0" text="Suma opadow" />
+            <TableColumn fx:id="windColumn" prefWidth="103.99996948242188" text="Prędkość wiatru" />
+            <TableColumn fx:id="pm2_5Column" prefWidth="146.0" text="Wskaznik PM 2,5" />
+            <TableColumn fx:id="pm10Column" prefWidth="150.0" text="Wskaznik PM 10" />
         </columns>
       </TableView>
    </children>

@@ -17,7 +17,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.client.RestClient;
 
 import java.net.URL;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class WeatherAppController implements Initializable {
@@ -40,7 +39,13 @@ public class WeatherAppController implements Initializable {
     @FXML
     private TableView<Weather> weatherTable;
 
+    private   AirPollutionService airPollutionService;
+
     private RestClient weatherRestClient = RestClient.create();
+
+    public WeatherAppController() {
+        this.airPollutionService = WeatherFXApplication.getApplicationContext().getBean(AirPollutionService.class);
+    }
 
     private final ObservableList<Weather> data =
             FXCollections.observableArrayList(
@@ -52,18 +57,14 @@ public class WeatherAppController implements Initializable {
     @FXML
     public void handleRefresh(ActionEvent actionEvent) {
         titleLabel.setText("Udalo sie");
-        data.add(new Weather("Praha", 38, 4.5, 4, 6.3, 7.3));
 
         WeatherJson[] result = weatherRestClient.get()
                 .uri("https://danepubliczne.imgw.pl/api/data/synop/")
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .body(WeatherJson[].class);
-        System.out.println(Arrays.toString(result));
 
         Weather[] weathers = weatherJsonToWeather(result);
-
-        AirPollutionService airPollutionService = new AirPollutionService();
 
         for (Weather weather : weathers) {
             Double pm2_5 = airPollutionService.getPm2_5Data(weather.getLocation());
